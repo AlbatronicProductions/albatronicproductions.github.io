@@ -75,55 +75,65 @@
       font-size: 1.05rem;
     }
 
-    .btns {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.25s ease;
-      font-size: 0.95rem;
-    }
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
 
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+  /* ensures readable text regardless of device */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-	.cyan {
-  	background: #164e63;
-  	color: #f8fafc;
-	}
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
 
-	.magenta {
-  	background: #6b21a8;
- 	color: #f8fafc;
-	}
+/* ✅ Use higher specificity so these ALWAYS win over any .btn color rules */
+.btn.cyan {
+  background: #164e63;
+  color: #0f172a; /* dark text for crisp readability */
+  border-color: rgba(34, 211, 238, 0.35);
+}
 
-    .small {
-      font-size: 0.9rem;
-      opacity: 0.7;
-      margin-top: 24px;
-    }
+.btn.magenta {
+  background: #6b21a8;
+  color: #0f172a; /* dark text for crisp readability */
+  border-color: rgba(217, 70, 239, 0.35);
+}
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 24px 20px;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-		
-	  .btn {
-    filter: saturate(85%) brightness(92%);
+.small {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  /* keep buttons readable + balanced on mobile */
+  .btn {
+    filter: saturate(90%) brightness(95%);
   }
 }
     }
@@ -149,6 +159,7 @@
   </div>
 </body>
 </html>
+
 
 
 
